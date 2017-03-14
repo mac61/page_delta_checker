@@ -57,7 +57,7 @@ def main():
             server.quit()
 
             time.sleep(5)
-            starting_products = num_occurrences
+            starting_occurrences = num_occurrences
             starting_size = content_size
 
         else:
