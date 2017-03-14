@@ -62,7 +62,7 @@ def main():
 
         else:
             # wait 60 seconds,
-            time.sleep(5)
+            time.sleep(60)
 
 
 if __name__ == "__main__":
