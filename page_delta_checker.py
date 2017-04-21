@@ -25,7 +25,13 @@ def main():
             'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.95 Safari/537.36'}
 
         # download the page
-        response = requests.get(url, headers=headers)
+        try:
+            response = requests.get(url, headers=headers, verify=False)
+        except Exception, e:
+            print "Unexpected error: " + str(e)
+            time.sleep(60)
+            continue
+            
         content = response.content
         content_size = len(response.content)
         num_occurrences = content.count("PLACEHOLDER")
